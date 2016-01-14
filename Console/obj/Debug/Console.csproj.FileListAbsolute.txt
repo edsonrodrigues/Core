@@ -1,0 +1,14 @@
+C:\Techway\Core\Core\Console\bin\Debug\Console.exe.config
+C:\Techway\Core\Core\Console\bin\Debug\Console.exe
+C:\Techway\Core\Core\Console\bin\Debug\Console.pdb
+C:\Techway\Core\Core\Console\bin\Debug\Core.BO.dll
+C:\Techway\Core\Core\Console\bin\Debug\Core.Dao.dll
+C:\Techway\Core\Core\Console\bin\Debug\Core.Entity.dll
+C:\Techway\Core\Core\Console\bin\Debug\EntityFramework.dll
+C:\Techway\Core\Core\Console\bin\Debug\Core.BO.pdb
+C:\Techway\Core\Core\Console\bin\Debug\Core.Dao.pdb
+C:\Techway\Core\Core\Console\bin\Debug\Core.Entity.pdb
+C:\Techway\Core\Core\Console\bin\Debug\EntityFramework.xml
+C:\Techway\Core\Core\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
+C:\Techway\Core\Core\Console\obj\Debug\Console.exe
+C:\Techway\Core\Core\Console\obj\Debug\Console.pdb

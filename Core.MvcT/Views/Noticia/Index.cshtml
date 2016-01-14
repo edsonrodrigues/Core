@@ -1,0 +1,55 @@
+﻿@using GridMvc.Html
+@using Core.Entity.Entidades.Layout
+@using GridMvc.Sorting
+@model  IList<Core.Entity.Entidades.Layout.NoticiaEntidade>
+
+<link href="~/Content/Gridmvc.css" rel="stylesheet" />
+<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/gridmvc.min.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/jquery-2.0.3.min.js"></script>
+
+<div class="row-fluid">
+    <input type="button" class="btn btn-success btn-primary" value="Criar Novo" onclick="location.href='@Url.Action("Create", "Noticia")'" />
+</div>
+<div class="row-fluid">
+    <p>
+        @Html.Partial("_NoticiasGrid", Model)
+    </p>
+
+</div>
+    @*
+        @Html.Grid(Model).Named("noticias").AutoGenerateColumns().Columns(columns =>
+          {
+              /* Adding not mapped column, that renders body, using inline Razor html helper */
+              columns.Add()
+                      .Encoded(false)
+                      .Sanitized(false)
+                      .SetWidth(30)
+                      .Css("hidden-xs") //hide on phones
+                      .RenderValueAs(o =>
+                      @<b>
+                          @Html.ActionLink("Editar", "Edit", new { id = o.Id }, new { @class = "modal_link" })
+                      </b>);
+
+              columns.Add()
+                      .Encoded(false)
+                      .Sanitized(false)
+                      .SetWidth(30)
+                      .Css("hidden-xs") //hide on phones
+                      .RenderValueAs(o =>
+                      @<b>
+                          @Html.ActionLink("Deletar", "Delete", new { id = o.Id }, new { @class = "modal_link" })
+                      </b>);
+
+          }).SetRowCssClasses(item => item.Status.Value ? "success" : string.Empty).WithPaging(15).Sortable().Filterable().WithMultipleFilters()
+
+    *@
+
+
+
+
+
+
+

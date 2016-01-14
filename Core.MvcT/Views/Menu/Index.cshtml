@@ -1,0 +1,20 @@
+﻿@{Layout = null;}
+<div class="sidebar-nav well">
+    <ul>
+        <!--colocar um if verificar se existe submenu no submenu e cria-los-->
+        @foreach (var menu in ViewBag.Menus)
+        {
+            <li>
+                <a href="#">@menu.Nome</a>
+                <ul>
+                    @foreach (var subMenu in menu.SubMenu)
+                    {
+                    <li><a href="/Noticia/">@subMenu.Nome</a></li>
+                    }
+                </ul>
+            </li>
+
+        }
+    </ul>
+
+</div>

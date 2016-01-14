@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="col-md-12">
+    <div class="jumbotron">
+        <h1>Sistema</h1>
+        <p class="lead">Banner.</p>
+        <p><a href="http://google.com" class="btn btn-primary btn-lg">Saiba mais &raquo;</a></p>
+    </div>
+
+    <div class="row">
+
+        @foreach (var noticia in ViewBag.Noticias)
+            {
+            <div class="col-md-4">
+
+                <h2>@noticia.Titulo</h2>
+
+                <p>@noticia.Descricao</p>
+
+                <p><a class="btn btn-default" href=@noticia.Url>Leia mais &raquo;</a></p>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+

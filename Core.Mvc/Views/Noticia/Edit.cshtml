@@ -1,0 +1,63 @@
+﻿@model Core.Entity.Entidades.Layout.NoticiaEntidade
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="sidebar-nav well">
+
+    <div class="row"></div>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+
+                <div class="col-sm-offset-1">
+                    <div class="row">
+                        @Html.LabelFor(x => x.Titulo)
+                    </div>
+                    <div class="row">
+                        @Html.TextBoxFor(x => x.Titulo)
+                    </div>
+
+                    <div class="row">
+                        @Html.LabelFor(x => x.Status)
+                    </div>
+
+                    <div class="row">
+                        @Html.DropDownListFor(x => x.Status, new[] {
+                new SelectListItem() {Text = "Ativo", Value = bool.TrueString},
+                new SelectListItem() {Text = "Inativo", Value = bool.FalseString}
+                }, "Escolha a sua opção ")
+                    </div>
+
+                    <div class="row">
+                        @Html.LabelFor(x => x.Descricao)
+                    </div>
+                    <div class="row">
+                        @Html.TextAreaFor(x => x.Descricao)
+                    </div>
+
+                    <div class="row">
+                        @Html.Label("Data")
+                    </div>
+                    <div class="row">
+                        @Html.TextBoxFor(x => x.Dt_Criacao)
+
+                    </div>
+                    <div class="row">
+                        <br />
+                        <div class="span3">
+                            <input type="submit" class="btn btn-success btn-primary" value="Salvar" />
+                            <input type="button" class="btn btn-danger btn-primary" value="Cancelar" onclick="location.href='@Url.Action("Index", "Noticia")'" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+
+
+
+

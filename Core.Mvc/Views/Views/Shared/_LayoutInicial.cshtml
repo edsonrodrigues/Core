@@ -1,0 +1,31 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <link href="~/Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/css/bootstrap3.css" rel="stylesheet" />
+</head>
+<body>
+
+    @Html.Partial("_Menu")
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-pull-6">
+                @RenderBody()
+            </div>  
+        </div>
+    </div>
+    <div class="modal-footer">
+        <footer>
+            <p>
+                &copy; @DateTime.Now.Year   rodapé
+            </p>
+        </footer>
+    </div>
+
+    @RenderSection("Scripts", false)
+</body>
+
+
+</html>

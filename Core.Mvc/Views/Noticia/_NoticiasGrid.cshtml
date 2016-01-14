@@ -1,0 +1,79 @@
+﻿@using GridMvc.Html
+@using Core.Entity.Entidades.Layout
+@using GridMvc.Sorting
+
+@model  IList<Core.Entity.Entidades.Layout.NoticiaEntidade>
+@helper CustomRenderingOfColumn(NoticiaEntidade noticia)
+{
+if (noticia.Status.Value)
+{
+        <text>Sim</text>
+}
+else
+{
+        <text>Não</text>
+}
+}
+
+@Html.Grid(Model).Named("noticiaGrid").Columns(columns =>
+{
+
+
+/* Adding "OrderID" column: */
+
+columns.Add(o => o.Id)
+       .Titled("Codigo")
+       .SetWidth(100);
+
+/* Adding "OrderDate" column: */
+columns.Add(o => o.Dt_Criacao, "Dt_Criacao")
+        .Titled("Data")
+        .SortInitialDirection(GridSortDirection.Descending)
+        .Format("{0:dd/MM/yyyy}")
+        .SetWidth(110);
+//.SetFilterWidgetType(string.Empty, new { format = "dd.mm.yyyy" })
+/* Adding "CompanyName" column: */
+columns.Add(o => o.Titulo)
+       .Titled("Titulo")
+       .SetWidth(250);
+
+/* Adding "Vip customer" column: */
+columns.Add(o => o.Texto)
+        .Titled("Ativo")
+        .SetWidth(70)
+        .Css("hidden-xs") //hide on phones
+        .RenderValueAs(o => CustomRenderingOfColumn(o));
+
+/* Adding not mapped column, that renders body, using inline Razor html helper */
+columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .Css("hidden-xs")
+        .RenderValueAs(o =>
+        @<b>
+            @Html.ActionLink("Editar", "Edit", new { id = o.Id }, new { @class = "modal_link" })
+        </b>);
+
+columns.Add()
+    .Encoded(false)
+    .Sanitized(false)
+    .SetWidth(30)
+    .Css("hidden-xs")
+    .RenderValueAs(o =>
+    @<b>
+        @Html.ActionLink("Vizualizar", "Details", new { id = o.Id }, new { @class = "modal_link" })
+    </b>);
+
+columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .Css("hidden-xs")
+        .RenderValueAs(o =>
+        @<b>
+            @Html.ActionLink("Deletar", "Delete", new { id = o.Id }, new { @class = "modal_link" })
+        </b>);
+
+}).SetRowCssClasses(item => item.Status.Value ? "success" : string.Empty).WithPaging(10).Sortable().Filterable().WithMultipleFilters()
+
