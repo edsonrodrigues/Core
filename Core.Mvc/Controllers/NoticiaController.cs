@@ -12,12 +12,9 @@ namespace Core.Mvc.Controllers
 {
     public class NoticiaController : Controller
     {
-        
+
         NoticiaBO bo = new NoticiaBO();
-        public NoticiaController()
-        {
-            
-        }
+
         #region List and Details noticia
         public ActionResult Index()
         {

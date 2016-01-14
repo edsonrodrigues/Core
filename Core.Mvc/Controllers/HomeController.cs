@@ -17,6 +17,8 @@ namespace Core.Mvc.Controllers
             List<NoticiaEntidade> lst = bo.SelectAll().Where(p => p.Tipo != 1).ToList();
             ViewBag.Noticias = lst;
 
+            MenuBO bom = new MenuBO();
+           List<MenuEntidade> ent = bom.SelectAll().ToList();
             MenuDAO menuDAO = new MenuDAO();
             ViewBag.Menus = menuDAO.Lista();
 

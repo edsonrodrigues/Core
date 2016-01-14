@@ -11,7 +11,7 @@ namespace Core.BO.Layout
     {
         public NoticiaBO()
         {
-
+            MenuBO bo = new MenuBO();
         }
 
         public void ValidarUsuario(NoticiaEntidade noticia)

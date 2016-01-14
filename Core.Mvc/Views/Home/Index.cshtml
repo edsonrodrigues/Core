@@ -3,10 +3,12 @@
 }
 
 <div class="col-md-12">
-    <div class="jumbotron">
-        <h1>Sistema</h1>
-        <p class="lead">Banner.</p>
-        <p><a href="http://google.com" class="btn btn-primary btn-lg">Saiba mais &raquo;</a></p>
+    <div class="container-fluid">
+        <div class="row">
+            <img src="//placehold.it/1624x700" class="img-responsive">
+
+            <p><a href="http://google.com" class="btn btn-primary btn-lg">Saiba mais &raquo;</a></p>
+        </div>
     </div>
 
     <div class="row">
@@ -14,16 +16,32 @@
         @foreach (var noticia in ViewBag.Noticias)
             {
             <div class="col-md-4">
+                <ul class="thumbnails">
+                    <li class="span2">
+                        <div class="thumbnail"> 
+                            <img src="~/Views/Shared/images/pic02.jpg" alt="">
+                            <h3>@noticia.Titulo</h3>
+                            <p>@noticia.Descricao...</p>
+                            <p><a class="btn btn-default" href=@noticia.Url>Leia mais &raquo;</a></p>
+                        </div>
+                    </li>
+                </ul>
 
-                <h2>@noticia.Titulo</h2>
-
-                <p>@noticia.Descricao</p>
-
-                <p><a class="btn btn-default" href=@noticia.Url>Leia mais &raquo;</a></p>
             </div>
         }
     </div>
 </div>
+
+@*@foreach (var noticia in ViewBag.Noticias)
+                {
+        <div class="col-md-4">
+            <h2>@noticia.Titulo</h2>
+
+            <p>@noticia.Descricao</p>
+
+            <p><a class="btn btn-default" href=@noticia.Url>Leia mais &raquo;</a></p>
+        </div>
+    }*@
 
 
 

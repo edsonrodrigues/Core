@@ -7,3 +7,12 @@ C:\Techway\Core\Core\Core.Entity\bin\Debug\EntityFramework.xml
 C:\Techway\Core\Core\Core.Entity\obj\Debug\Core.Entity.csprojResolveAssemblyReference.cache
 C:\Techway\Core\Core\Core.Entity\obj\Debug\Core.Entity.dll
 C:\Techway\Core\Core\Core.Entity\obj\Debug\Core.Entity.pdb
+C:\Techway\Core\CoreApp\Core.Entity\bin\Debug\Core.Entity.dll
+C:\Techway\Core\CoreApp\Core.Entity\bin\Debug\Core.Entity.pdb
+C:\Techway\Core\CoreApp\Core.Entity\bin\Debug\Core.Commons.dll
+C:\Techway\Core\CoreApp\Core.Entity\bin\Debug\EntityFramework.dll
+C:\Techway\Core\CoreApp\Core.Entity\bin\Debug\Core.Commons.pdb
+C:\Techway\Core\CoreApp\Core.Entity\bin\Debug\EntityFramework.xml
+C:\Techway\Core\CoreApp\Core.Entity\obj\Debug\Core.Entity.csprojResolveAssemblyReference.cache
+C:\Techway\Core\CoreApp\Core.Entity\obj\Debug\Core.Entity.dll
+C:\Techway\Core\CoreApp\Core.Entity\obj\Debug\Core.Entity.pdb

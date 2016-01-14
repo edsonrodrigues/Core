@@ -1,72 +1,40 @@
-﻿@{Layout = null;}
-<div class="sidebar-nav well">
-  @* <ul>
-        <!--colocar um if verificar se existe submenu no submenu e cria-los-->
-        @foreach (var menu in ViewBag.Menus)
-        {
-            <li>
-                <a href="#">@menu.Nome</a>
-                <ul>
-                    @foreach (var subMenu in menu.SubMenu)
-                    {
-                    <li><a href="/Noticia/">@subMenu.Nome</a></li>
-                    }
-                </ul>
-            </li>
+﻿@using GridMvc.Html
+@using Core.Entity.Entidades.Layout
+@using GridMvc.Sorting
+@model  IList<Core.Entity.Entidades.Layout.MenuEntidade>
 
-        }
-    </ul>*@
+@{
+    Layout = "~/Views/Shared/_LayoutSistema.cshtml";
 
-    <ul id="menu-v">
-    <li><a href="#">Item 1</a></li>
-    <li>
-        <a href="#">Item 2</a>
-        <ul class="sub">
-            <li><a href="vertical-menu#1">Vertical Menu</a></li>
-            <li><a href="vertical-menu#2">Vertical Menus</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#">Item 3</a>
-        <ul class="sub">
-            <li><a href="#">Sub Item 3.1</a></li>
-            <li><a href="#">Sub Item 3.2</a></li>
-            <li><a href="#">Sub Item 3.3</a></li>
-            <li><a href="#">Sub Item 3.4</a></li>
-            <li><a href="#">Sub Item 3.5</a></li>
-        </ul>
-    </li>
-    <li><a href="#">Item 4</a></li>
-    <li>
-        <a href="#">Item 5</a>
-        <ul class="sub">
-            <li><a href="#">Sub Item 5.1</a></li>
-            <li>
-                <a href="#">Sub Item 5.2</a>
-                <ul class="sub">
-                    <li><a href="#521">Vertical Menu 5.2.1</a></li>
-                    <li><a href="#522">Vertical Menu 5.2.2</a></li>
-                    <li><a href="#523">Vertical Menu 5.2.3</a></li>
-                    <li><a href="#524">Vertical Menu 5.2.4</a></li>
-                    <li><a href="#525">Vertical Menu 5.2.5</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Sub Item 5.3</a>
-                <ul class="sub">
-                    <li><a href="#">Sub Item 5.3.1</a></li>
-                    <li><a href="#">Sub Item 5.3.2</a></li>
-                    <li><a href="#">Sub Item 5.3.3</a></li>
-                    <li><a href="#">Sub Item 5.3.4</a></li>
-                    <li><a href="#">Sub Item 5.3.5</a></li>
-                    <li><a href="#">Sub Item 5.3.6</a></li>
-                    <li><a href="#537">Vertical Menus 5.3.7</a></li>
-                    <li><a href="#538">Vertical Menus 5.3.8</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><a href="#">Item 6</a></li>
-    </ul>
+}
+<link href="~/Content/Gridmvc.css" rel="stylesheet" />
+<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/gridmvc.min.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/jquery-2.0.3.min.js"></script>
+<script src="~/Scripts/MenuCool.js"></script>
+<link href="~/Content/menuCool.css" rel="stylesheet" />
 
-</div>
+<div class="row-fluid">
+    
+        <div class="col-md-12">
+            
+            <input type="button" class="btn btn-success btn-primary" value="Criar Novo" onclick="location.href='@Url.Action("Create", "Menu")'" />
+
+            <div class="row-fluid">
+                <p>
+                    @Html.Partial("_MenuGrid", Model)
+                </p>
+
+            </div>
+        </div>
+    </div>
+        
+
+
+
+
+
+
+

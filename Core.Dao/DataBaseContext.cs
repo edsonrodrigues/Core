@@ -9,9 +9,9 @@ namespace Core.Dao
     public class DatabaseContext : DbContext
     {
         public DatabaseContext()
-            //: base(@"Data Source=EDSON\;Initial Catalog=CORE;Persist Security Info=True;User ID=Aplicacao;Password=Aplicacao;")
+             //: base(@"Data Source=EDSON\;Initial Catalog=CORE;Persist Security Info=True;User ID=Aplicacao;Password=Aplicacao;")
              : base("name=DefaultConnection")
-            
+
         {
             Database.SetInitializer<DatabaseContext>(null);
         }
@@ -20,11 +20,11 @@ namespace Core.Dao
         #region Map Tables
 
         public DbSet<UsuarioEntidade> Usuario { get; set; }
-       // public DbSet<MenuEntidade> Menu { get; set; }
-       // public DbSet<BannerEntidade> Banner { get; set; }
-       // public DbSet<ImagemEntidade> Imagem { get; set; }
+        public DbSet<MenuEntidade> Menu { get; set; }
+        //public DbSet<BannerEntidade> Banner { get; set; }
+        // public DbSet<ImagemEntidade> Imagem { get; set; }
         public DbSet<NoticiaEntidade> Noticia { get; set; }
-        
+
         public void Save()
         {
             base.SaveChanges();
@@ -41,7 +41,7 @@ namespace Core.Dao
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-           // modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+            //modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
 
             //TableMapping
             TableMapping(modelBuilder);
@@ -65,9 +65,9 @@ namespace Core.Dao
         private void TableMapping(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UsuarioEntidade>().ToTable("Usuario");
-           // modelBuilder.Entity<MenuEntidade>().ToTable("Menu");
-           // modelBuilder.Entity<BannerEntidade>().ToTable("Banner");
-            //modelBuilder.Entity<ImagemEntidade>().ToTable("Imagem");
+            modelBuilder.Entity<MenuEntidade>().ToTable("Menu");
+            // modelBuilder.Entity<BannerEntidade>().ToTable("Banner");
+            // modelBuilder.Entity<ImagemEntidade>().ToTable("Imagem");
             modelBuilder.Entity<NoticiaEntidade>().ToTable("Noticias");
 
         }
@@ -79,7 +79,17 @@ namespace Core.Dao
         private void OneToManyMapping(DbModelBuilder modelBuilder)
         {
 
+            /*  modelBuilder.Entity<ImagemEntidade>()
+              .HasRequired(e => e.Banner)
+              .WithMany()
+              .HasForeignKey(e => e.BannerId);*/
 
+            //Auto relacionamento
+
+            modelBuilder.Entity<MenuEntidade>().
+            HasOptional(e => e.SubMenu).
+            WithMany().
+            HasForeignKey(m => m.ParentId);
 
         }
 

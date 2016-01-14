@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,13 +12,15 @@ namespace Core.Entity.Entidades.Layout
 
         public string Descricao { get; set; }
 
-        public string UrlPag { get; set; }
-        
-        public IList<MenuEntidade> SubMenu { get; set; }
+        public string Url { get; set; }
+
+        public int? ParentId { get; set; }
+
+        public MenuEntidade SubMenu { get; set; }
 
         public MenuEntidade()
         {
-            SubMenu = new List<MenuEntidade>();
+            //SubMenu = new List<MenuEntidade>();
         }
     }
     

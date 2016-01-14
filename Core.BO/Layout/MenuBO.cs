@@ -14,6 +14,9 @@ namespace Core.BO.Layout
 
         }
 
+
+
+        
         public void ValidarUsuario(MenuEntidade menu)
         {
 
