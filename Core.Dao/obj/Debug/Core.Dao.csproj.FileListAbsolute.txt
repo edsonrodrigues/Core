@@ -1,0 +1,10 @@
+C:\Techway\Core\Core\Core.Dao\bin\Debug\Core.Dao.dll.config
+C:\Techway\Core\Core\Core.Dao\bin\Debug\Core.Dao.dll
+C:\Techway\Core\Core\Core.Dao\bin\Debug\Core.Dao.pdb
+C:\Techway\Core\Core\Core.Dao\bin\Debug\Core.Entity.dll
+C:\Techway\Core\Core\Core.Dao\bin\Debug\EntityFramework.dll
+C:\Techway\Core\Core\Core.Dao\bin\Debug\Core.Entity.pdb
+C:\Techway\Core\Core\Core.Dao\bin\Debug\EntityFramework.xml
+C:\Techway\Core\Core\Core.Dao\obj\Debug\Core.Dao.csprojResolveAssemblyReference.cache
+C:\Techway\Core\Core\Core.Dao\obj\Debug\Core.Dao.dll
+C:\Techway\Core\Core\Core.Dao\obj\Debug\Core.Dao.pdb

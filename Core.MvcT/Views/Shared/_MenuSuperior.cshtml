@@ -1,0 +1,28 @@
+﻿<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        @Html.ActionLink(" Sistema xyz", "Index", "Home", new { @class = "brand" })
+        <ul class="nav">
+            <li> @Html.ActionLink("Sobre", "Sobre", "Home")</li>
+            <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
+        </ul>
+        <p class="navbar-text pull-right">
+            @if (Session["usuarioLogado"] != null)
+            {
+                @:Bem-Vindo
+                @Session["usuarioLogado"]
+                @Html.ActionLink("Logout", "Logout", "Autenticacao")
+
+            }
+            else
+            {
+                @:Ola Visitante
+                @Html.ActionLink("Login", "Index", "Autenticacao")
+                @:ou
+                @Html.ActionLink("Cadastre-se.", "Form", "Usuarios")
+
+            }
+
+        </p>
+    </div>
+</div>
+

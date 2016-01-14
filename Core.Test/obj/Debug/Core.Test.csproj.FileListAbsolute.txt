@@ -1,0 +1,5 @@
+C:\Techway\Core\Core\Core.Test\bin\Debug\Core.Test.dll
+C:\Techway\Core\Core\Core.Test\bin\Debug\Core.Test.pdb
+C:\Techway\Core\Core\Core.Test\obj\Debug\Core.Test.csprojResolveAssemblyReference.cache
+C:\Techway\Core\Core\Core.Test\obj\Debug\Core.Test.dll
+C:\Techway\Core\Core\Core.Test\obj\Debug\Core.Test.pdb

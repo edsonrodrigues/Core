@@ -1,0 +1,43 @@
+﻿@model Core.Entity.Entidades.Layout.NoticiaEntidade
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+
+
+    <div class="row">
+        
+        <div class="col-sm-4">
+            <div class="span12">
+                @Html.LabelFor(x => x.Titulo)
+                @Html.TextBoxFor(x => x.Titulo)
+            </div>
+                <div class="span12">
+                    @Html.LabelFor(x => x.Status)
+                    @Html.DropDownListFor(x => x.Status, new[] {
+                new SelectListItem() {Text = "Ativo", Value = bool.TrueString},
+                new SelectListItem() {Text = "Inativo", Value = bool.FalseString}
+                }, "Escolha a sua opção ")
+                </div>
+                <div class="span12">
+                    @Html.LabelFor(x => x.Descricao)
+                     @Html.TextAreaFor(x => x.Descricao)
+                </div>
+           
+            <div class="span12">
+                @Html.Label("Data")
+                @Html.TextBoxFor(x => x.Dt_Criacao)
+
+            </div>
+        </div>
+        </div>
+</div>
+
+
+
+
+

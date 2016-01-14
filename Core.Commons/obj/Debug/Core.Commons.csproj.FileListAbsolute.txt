@@ -1,0 +1,4 @@
+C:\Techway\Core\Core\Core.Commons\bin\Debug\Core.Commons.dll
+C:\Techway\Core\Core\Core.Commons\bin\Debug\Core.Commons.pdb
+C:\Techway\Core\Core\Core.Commons\obj\Debug\Core.Commons.dll
+C:\Techway\Core\Core\Core.Commons\obj\Debug\Core.Commons.pdb
